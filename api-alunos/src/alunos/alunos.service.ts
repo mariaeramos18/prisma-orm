@@ -23,13 +23,13 @@ export class AlunosService {
   }
 
   create(data: CreateAlunoDto) {
-    return this.alunosRepository.create(data.nome, data.curso);
+    return this.alunosRepository.create(data.nome, data.email, data.curso);
   }
 
   async update(id: number, data: UpdateAlunoDto) {
     await this.findById(id);
 
-    await this.alunosRepository.update(id, data.nome, data.curso);
+    await this.alunosRepository.update(id, data.nome, data.email, data.curso);
 
     return this.findById(id);
   }

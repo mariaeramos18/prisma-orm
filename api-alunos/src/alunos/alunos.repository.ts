@@ -17,16 +17,16 @@ export class AlunosRepository {
     });
   }
 
-  create(nome: string, curso: string) {
+  create(nome: string, email: string, curso: string) {
     return this.prisma.aluno.create({
-      data: { nome, curso },
+      data: { nome, email, curso },
     });
   }
 
-  update(id: number, nome: string, curso: string) {
+  update(id: number, nome: string, email: string, curso: string) {
     return this.prisma.aluno.update({
       where: { id },
-      data: { nome, curso },
+      data: { nome, email, curso },
     });
   }
 

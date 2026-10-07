@@ -13,9 +13,10 @@ datasource db {
 }
 
 model Aluno {
-  id    Int    @id @default(autoincrement())
-  nome  String @db.VarChar(100)
-  curso String @db.VarChar(100)
+  id    Int     @id @default(autoincrement())
+  nome  String  @db.VarChar(100)
+  email String? @unique @db.VarChar(150) // <- Adicione esta linha
+  curso String  @db.VarChar(100)
 
   @@map("alunos")
 }
